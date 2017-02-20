@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+
+import { DynamicTaskListComponent } from './tasks/dynamic-task-list.component'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Mani!';
+  message = 'this is app component';
+  @ViewChild(DynamicTaskListComponent) dcr;
+
 }

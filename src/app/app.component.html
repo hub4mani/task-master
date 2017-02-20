@@ -1,3 +1,71 @@
-<h1>
-  {{title}}
-</h1>
+<div>
+  <md-toolbar color="primary">
+      <button md-icon-button (click)="sidenav.close()"><md-icon>menu</md-icon></button>
+      {{ title }}
+  </md-toolbar>
+
+<md-sidenav-container class="app-container">
+  <md-sidenav #sidenav class="app-sidenav" mode="side">
+    <md-nav-list>
+      <md-list-item>
+        <button md-icon-button>
+          <md-icon>account_circle</md-icon>
+          Create Account
+        </button>
+      </md-list-item>
+      <md-list-item>
+        <button md-icon-button>
+          <md-icon>account_balance</md-icon>
+          Add Bank
+        </button>
+      </md-list-item>
+      <md-list-item>
+        <button md-icon-button>
+          <md-icon>card_membership</md-icon>
+          Add Credit Card
+        </button>
+      </md-list-item>
+      <md-list-item>
+        <button md-icon-button>
+          <md-icon>account_balance_wallet</md-icon>
+          Add PayPal Balance
+        </button>
+      </md-list-item>
+      <md-list-item>
+        <button md-icon-button>
+          <md-icon>today</md-icon>
+          Plan Payment
+        </button>
+      </md-list-item>
+      <md-list-item>
+        <button md-icon-button>
+          <md-icon>payment</md-icon>
+          Make Payment
+        </button>
+      </md-list-item>
+      <md-list-item>
+        <button md-icon-button>
+          <md-icon>check_circle</md-icon>
+          Validate Transaction
+        </button>
+      </md-list-item>
+    </md-nav-list>
+  </md-sidenav>
+  
+  <div class="app-sidenav-content">
+    <h3>{{message}}</h3>
+    <app-dynamic #ad></app-dynamic><br>
+    <input md-input #name type="text" placeholder="name">
+    <button md-button (click)="ad.addNewName(name.value)">Add Name</button>
+    <br> 
+    
+    <input md-input #age type="number" placeholder="age">
+    <button md-button (click)="ad.addNewAge(age.value)">Add Age</button>
+    <br>
+    <button md-button (click)="sidenav.open()">
+      Edit task-list
+    </button>
+  </div>
+
+</md-sidenav-container>
+</div>
